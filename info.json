@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "821b9884e09584884822d35edf36a782a30af305",
+    "author": "richelbilderbeek <richel@richelbilderbeek.nl>",
+    "time": "2021-07-09 12:51:06",
+    "files": 1,
+    "merge": false,
+    "message": "2.4.3\n"
+  },
+  "remote": "https://github.com/ropensci/beastier",
+  "pkg": "beastier"
+}
