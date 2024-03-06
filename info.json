@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "7fb726ff3a5ec54ea83c08ba31d3cfac4eada16e",
+    "author": "richelbilderbeek <richel@richelbilderbeek.nl>",
+    "time": "2023-11-07 11:44:58",
+    "files": 1,
+    "merge": false,
+    "message": "Submitted to CRAN\n"
+  },
+  "repo": "https://github.com/ropensci/beastier",
+  "pkg": "beastier"
+}
