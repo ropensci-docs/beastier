@@ -1,0 +1,13 @@
+{
+  "commit": {
+    "commit": "fb20b891a5b85539ae1c6fc399c64cd381907fed",
+    "author": "richelbilderbeek <rjcbilderbeek@gmail.com>",
+    "time": "2025-12-08T18:23:47Z",
+    "files": 1,
+    "merge": false,
+    "message": "Fix Markdown\n"
+  },
+  "repo": "https://github.com/ropensci/beastier",
+  "pkg": "beastier",
+  "time": "2026-08-30T08:09:27Z"
+}
