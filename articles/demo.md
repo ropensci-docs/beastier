@@ -1,0 +1,80 @@
+# beastier demo
+
+## Introduction
+
+![](beastier_logo.png)
+
+This vignette demonstrates how to use `beastier`.
+
+First, load the library:
+
+``` r
+
+library(beastier)
+```
+
+Also, we’ll load the `testthat` library, to verify the statements in
+this vignette:
+
+``` r
+
+library(testthat)
+```
+
+To run BEAST2, we need to create a BEAST2 options structure\`. We will
+use a supplied BEAST2 XML file. For the rest, we’ll use the default
+options:
+
+``` r
+
+beast2_options <- create_beast2_options(
+  input_filename = get_beastier_path("2_4.xml")
+)
+names(beast2_options)
+#> [1] "input_filename"        "output_state_filename" "rng_seed"             
+#> [4] "n_threads"             "use_beagle"            "overwrite"            
+#> [7] "beast2_path"           "verbose"
+```
+
+Before running BEAST2, the BEAST2 input file must exist, and we expect
+no output file to be created just yet:
+
+``` r
+
+expect_true(file.exists(beast2_options$input_filename))
+expect_false(file.exists(beast2_options$output_state_filename))
+```
+
+We can run `beastier` now, if BEAST2 is installed. Because BEAST2 needs
+to be installed by the user, this vignette checks if it is installed in
+every step:
+
+``` r
+
+if (is_beast2_installed()) {
+  output <- run_beast2_from_options(beast2_options)
+}
+```
+
+If `beastier` has run BEAST2, the BEAST2 output can be shown:
+
+``` r
+
+if (is_beast2_installed()) {
+  print(output)
+}
+```
+
+If `beastier` has run BEAST2, the MCMC’s final state will be saved to a
+file:
+
+``` r
+
+if (is_beast2_installed()) {
+  expect_true(file.exists(beast2_options$output_state_filename))
+  file.remove(beast2_options$output_state_filename)
+}
+beastier::remove_beaustier_folders()
+```
+
+This final state can be used to continue the run.
